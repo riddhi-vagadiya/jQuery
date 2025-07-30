@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            position: relative;
+            display: inline-block;
+            max-width: 100%;
+            margin: 0 auto;
+            overflow: hidden;
+            height: 400px;
+             
+        }
+        video {
+            position: absolute;
+            top: 10%; 
+            margin-top: 22px;
+            margin-left: -650px;
+            height:54%; 
+            object-fit: contain;
+            border: 3px solid black;
+        }
+        </style>
+</head>
+<body>
+    <h2>Tv On</h2>
+    <hr>
+    <image src="tv1.webp" alt="" height="200px">
+        <video src="tom.mp4" autoplay></video>
+    <script>
+        function changeText(){
+            document.getElementById('title').innerHTML = "I am fine.";
+        }
+    </script>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+            $('img').on('mouseover',function(){
+                var current = $(this).attr('src');
+                console.log(current);
+                if(current == 'tv1.webp'){
+                    $(this).attr('src','tv1.webp');
+                }else{
+                    $(this).attr('src','tom.mp4');
+                }
+            });
+
+            $('img').on('mouseout',function(){
+                var current = $(this).attr('src');
+                console.log(current);
+                if(current == 'tv1.webp'){
+                    $(this).attr('src','tv1.webp');
+                }else{
+                    $(this).attr('src','tom.mp4');
+                }
+            });
+            
+
+; // main jq ends
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 onclick="changeText()" id="title">Hello! How are you???</h1>
+    <hr>
+    <h2>Hello! How are you????</h2>
+    <hr>
+    <img src="red.png" alt="" height="200px">
+
+    <script>
+        function changeText(){
+            document.getElementById('title').innerHTML = "I am fine.";
+        }
+    </script>
+
+    <script src="jquery-3.7.1.js"></script>
+    <script>
+        $(document).ready(function(){
+
+            $("h2").on('click',function(){
+                $(this).html('I am fine.');
+            });
+
+            //change image
+            $('img').on('mouseover',function(){
+                var current = $(this).attr('src');
+                console.log(current);
+                if(current == 'red.png'){
+                    $(this).attr('src','green.png');
+                }else{
+                    $(this).attr('src','red.png');
+                }
+            });
+
+            // mouseout
+            $('img').on('mouseout',function(){
+                var current = $(this).attr('src');
+                console.log(current);
+                if(current == 'red.png'){
+                    $(this).attr('src','green.png');
+                }else{
+                    $(this).attr('src','red.png');
+                }
+            });
+            
+
+        }); // main jq ends
+    </script>
+
+</body>
+</html>
